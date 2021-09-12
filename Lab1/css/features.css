@@ -1,0 +1,37 @@
+.features{
+    background: linear-gradient(180deg, #F6F5F5 -45.04%, #FFFFFF 19.67%, #F4F3F3 88.56%);
+    padding: 140px 0;
+}
+
+.features >.container{
+    display: flex;
+    align-items: center;
+}
+
+.features__inner{
+    margin-left: 204px;
+}
+
+.illustration{
+    width: 508.12px;
+    height: 417.07px; 
+}
+
+.features__title{
+    font-weight: 500;
+    font-size: 35px;
+    color: #091133;
+    margin-bottom: 16px;
+    line-height: 50px; 
+}
+
+.features-item{
+    font-weight: 400;
+    margin-left: 0px;
+    margin-top: 15px;
+    padding-left: 30px;
+    font-size: 14px;
+    list-style: none;
+    list-style-position: outside;
+    background: url(../img/check-box.svg) no-repeat left center;
+}
