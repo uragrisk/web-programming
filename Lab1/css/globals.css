@@ -1,0 +1,41 @@
+body {
+    background: #fff;
+    font-family: Rubik;
+    color: #4F5665;
+}
+
+.title {
+    font-weight: 500;
+    font-size: 50px;
+    color: #091133;
+    margin-bottom: 16px;
+    line-height: 70px;
+}
+
+.container{
+    margin: 0 auto;
+    max-width: 1140px;
+}
+
+a{
+    text-decoration: none;
+    color: #4F5665;
+}
+
+.paragraph{
+    line-height: 30px;
+    font-size: 16px;
+    color: #4F5665;
+}
+
+.logo_text{
+    font-size: 20px;
+    color: #0B132A;
+    font-weight: 1000;
+}
+
+.logo{
+    width: 35px;
+    height: 36.23px;
+    margin-right: 10px;
+}
