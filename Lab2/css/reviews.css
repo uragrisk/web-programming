@@ -1,0 +1,173 @@
+.reviews {
+    text-align: center;
+    margin: 105px 0 56px;
+}
+
+.reviews__inner-title {
+    text-align: center;
+    margin: auto;
+    width: 400px;
+    font-weight: 500;
+    font-size: 35px;
+    color: #091133;
+    margin-bottom: 16px;
+    line-height: 50px;
+}
+
+.reviews__inner-paragraph {
+    line-height: 30px;
+    font-size: 16px;
+    color: #4F5665;
+    text-align: center;
+    margin: auto;
+    width: 500px;
+}
+
+.pricing {
+    text-align: center;
+    margin: 105px 0 56px;
+    background: url(../images/blot.svg) no-repeat center / auto 100%;
+}
+
+.review {
+    width: 350.46px;
+    height: 230px;
+    background: #FFFFFF;
+    border: 2px solid #DDDDDD;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.review.special_review {
+    border-color: #F53838;
+}
+
+.reviews_hero {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 58px;
+    text-align: left;
+    padding-bottom: 288px;
+}
+
+.reviewer_info {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 30px;
+    align-items: center;
+}
+
+.about_reviewer {
+    margin-left: 15px;
+}
+
+.reviewers_name {
+    color: #0B132A;
+    font-size: 18px;
+    line-height: 30px;
+    margin: 0;
+}
+
+.location {
+    margin: 0;
+    font-size: 14px;
+    color: #4F5665;
+    font-weight: 300;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
+.point {
+    margin-right: 5px;
+    font-size: 16px;
+    color: #0B132A;
+    font-weight: 400;
+}
+
+.review-paragraph {
+    font-weight: 400;
+    width: 300px;
+    margin: auto;
+    margin-top: 20px;
+    color: #0B132A;
+}
+
+@media screen and (max-width: 1165px){
+    .reviews_hero{
+        flex-direction: column;
+        padding-bottom: 150px;
+    }
+
+    .review{
+        margin: auto;
+        margin-bottom: 25px;
+    }
+    
+}
+
+@media screen and (max-width: 640px){
+
+
+    .reviews__inner-title {
+        width: auto;
+        font-size: 30px;
+    }
+    
+    .reviews__inner-paragraph {
+        width: auto;
+        
+    }
+
+    .review{
+        width: 260px;
+        height: 180px;
+        text-align: center;
+    }
+    
+    .review__profile-photo{
+        width: 35px;
+    }
+
+    .reviewers_name{
+        font-size: 14px;
+        line-height: 19px;
+    }
+
+    .location{
+        font-size: 11px;
+    }
+
+    .star{
+        width: 15px;
+    }
+
+    .point{
+        font-size: 12px;
+        margin: 0px;
+        margin-bottom: 2px;
+    }
+
+    .review-paragraph{
+        font-size: 12px;
+        width: auto;
+        padding: 10px;
+
+    }
+    
+    .rating{
+        flex-direction: column;
+    }
+
+    .about_reviewer{
+        margin-left: 5px;
+    }
+
+    .reviewer_info{
+        margin-left: auto 0;
+    }
+
+}
