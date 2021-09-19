@@ -1,0 +1,47 @@
+.hero__button{
+    margin-top: 50px;
+    width: 250px;
+    height: 60px;
+    background: #F53838;
+    border-radius: 10px;
+    border: none;
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+    box-shadow: 0 40px 40px -20px rgba(245, 56, 56, 0.50);
+    transition: 1s;
+}
+
+.hero__button:hover {
+    transform: scale(1.2);
+}
+
+.get-started{
+    padding: 110px 0;
+}
+
+.get-started >.container{
+    display: flex;
+}
+
+.illustration1{
+    padding-left: 30px;
+    width: 611.24px;
+    height: 406.08px;
+}
+
+@media screen and (max-width: 1015px) {
+    .get-started >.container{
+        display: inline;
+    }
+    .illustration1{
+        padding: auto;
+    }   
+}
+
+@media screen and (max-width: 640px){
+    .illustration1{
+        max-width: 80%;
+        height: auto;
+    }
+}
