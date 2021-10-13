@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cups</title>
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet'>
+</head>
+
+<body>
+    <header>
+        <div class="container header_container">
+            <nav class="header__nav">
+                <button id="show_all_cups_button" class="header__my_cup">My Cups</button>
+                <button id="create_cup_button" class="header__create_cup">Create Cup</button>
+            </nav>
+            <div class="search-form">
+                <form>
+                    <input type="text" class="search-form__text" id="search_input" placeholder="Type something..." />
+                    <button class="search-form__search-button" id="search_button">Search</button>
+                    <button class="search-form__cancel-button" id="cancel_search_button">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="container">
+            <div class="hero">
+                <div class="cup-manager">
+                    <h2>Manage cups</h2>
+                    <div class="cups-manager__sorting">
+                        Sort by volume
+                        <div id="sort-checkbox" class="togle-btn" onclick="sortCheckbox()">
+                            <div class="inner-circle"></div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="cups-manager__count">
+                        <h2>Count total volume:</h2>
+                        <button class="cups-manager__count__button" id="count_button">Count</button>
+                        <div id="count_results" class="cups-manager__count__display hidden">
+                            <ul class="total_volume_items">
+                                <li class="total_volume_item">Total volume:</li>
+                                <li class="total_volume_item" id="total_volume"></li>
+                                <li class="total_volume_item">ml</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="cups_list" class="cups-display"></div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <script type="module" src="js/index.js"></script>
+    <script src="js/sortCheckbox.js"></script>
+</body>
+
+</html>
