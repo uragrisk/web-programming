@@ -16,7 +16,7 @@
         <div class="container header_container">
             <nav class="header__nav">
                 <button id="show_all_cups_button" class="header__my_cup">My Cups</button>
-                <button id="create_cup_button" class="header__create_cup">Create Cup</button>
+                <button id="create_cup_window_button" class="header__create_cup">Create Cup</button>
             </nav>
             <div class="search-form">
                 <form>
@@ -54,6 +54,74 @@
                 <div id="cups_list" class="cups-display"></div>
             </div>
         </div>
+    </section>
+    <section>
+        <div class="modal_window" id="create_cup_window">
+            <div class="modal_window__content">
+                <div class="modal_window__header">
+                    <h1>Create Cup</h1>
+                    <span class="modal_window-close-button" id="create_cup_window_close">X</span>
+                </div>
+                <div class="modal_window__body">
+                    <form class="modal_window-form" id="create_cup_window_form">
+                        <label for="name">Cup name:</label>
+                        <input type="text" id="create-name-input" name="name">
+
+                        <label for="volume">Cup volume:</label>
+                        <input type="text" id="create-volume-input" name="volume">
+
+                        <label for="material">Cup material:</label>
+                        <input type="text" id="create-material-input" name="material">
+                        
+                        <label for="color">Cup color:</label>
+                        <select name="color" id="create-color-select">
+                            <option value="red">🔴 Red</option>
+                            <option value="blue">🔵 Blue</option>
+                            <option value="white">⚪ White</option>
+                            <option value="silver">🔘 Silver</option>
+                            <option value="transparent">⬜️ Transparent</option>
+                        </select>
+
+                        <button class="modal_window-form-button" id="create_cup-form-button">
+                            Create
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="modal_window" id="edit_cup_window">
+            <div class="modal_window__content">
+                <div class="modal_window__header">
+                    <h1>Edit Cup</h1>
+                    <span class="modal_window-close-button" id="edit_cup_window_close">X</span>
+                </div>
+                <div class="modal_window__body">
+                    <form class="modal_window-form" id="edit_cup_window_form">
+                        <label for="name">Cup name:</label>
+                        <input type="text" id="edit-name-input" name="name">
+
+                        <label for="volume">Cup volume:</label>
+                        <input type="text" id="edit-volume-input" name="volume">
+
+                        <label for="material">Cup material:</label>
+                        <input type="text" id="edit-material-input" name="material">
+                        
+                        <label for="color">Cup color:</label>
+                        <select name="color" id="edit-color-select">
+                            <option value="red">🔴 Red</option>
+                            <option value="blue">🔵 Blue</option>
+                            <option value="white">⚪ White</option>
+                            <option value="silver">🔘 Silver</option>
+                            <option value="transparent">⬜️ Transparent</option>
+                        </select>
+                        <button class="modal_window-form-button" id="edit_cup-form-button">
+                            Edit
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
     <script type="module" src="js/index.js"></script>

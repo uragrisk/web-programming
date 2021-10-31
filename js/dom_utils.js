@@ -1,4 +1,8 @@
-const cupsList = document.getElementById("cups_list")
+import {cups, cupsList} from "./index.js"
+const editCupWindow = document.getElementById("edit_cup_window")
+
+
+
 const cardTemplate = ({ id, cupName, volume, material, color, image }) => `
 <div id="cup_${id}" class="card">
     <img src="img/${image}" class="card-image" width="200px" alt="card image">
@@ -9,8 +13,8 @@ const cardTemplate = ({ id, cupName, volume, material, color, image }) => `
         <p class="card__body-paragraph">Color: ${color}</p>
     </div>
     <div class="card__buttons">
-        <button class="card__edit-button" id="edit_button_cup_1">Edit</button>
-        <button class="card__delete-button" id="delete_button_cup_1">Delete</button>
+        <button class="card__edit-button" id="edit_button_cup_${id}">Edit</button>
+        <button class="card__delete-button" id="delete_button_cup_${id}">Delete</button>
 </div>
 `
 
@@ -24,6 +28,7 @@ const renderItemsDOM = (array) => {
     for (const item of array) {
         addItemToPage(item)
     }
+    renderEditButtons()
 }
 
 const calculateTotal = (cups) => {
@@ -34,4 +39,22 @@ const calculateTotal = (cups) => {
     return total
 }
 
-export { renderItemsDOM, addItemToPage, calculateTotal}
+const openModalWindow = (modalWindow) => {
+    modalWindow.style.display = "block"
+}
+
+const closeModalWindow = (modalWindow) => {
+    modalWindow.style.display = "none"
+}
+
+const renderEditButtons = () =>{
+    for(let cup of cups){
+        let editButton = document.getElementById(`edit_button_cup_${cup.id}`)
+        editButton.addEventListener("click", () => {
+            openModalWindow(editCupWindow)
+    })
+}
+}
+
+
+export { renderItemsDOM, addItemToPage, calculateTotal, openModalWindow, closeModalWindow}

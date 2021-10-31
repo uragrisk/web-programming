@@ -1,6 +1,6 @@
-import {renderItemsDOM, addItemToPage, calculateTotal} from "./dom_utils.js"
+import {renderItemsDOM, addItemToPage, calculateTotal, openModalWindow, closeModalWindow} from "./dom_utils.js"
+import {validateInputString, validateCreate, validateEdit} from "./validation.js"
 
-const ACTIVE_CLASSNAME = "active"
 const sortingCheckbox = document.getElementById("sort-checkbox")
 const searchButton = document.getElementById("search_button")
 const cancelButton = document.getElementById("cancel_search_button")
@@ -8,6 +8,20 @@ const searchInput = document.getElementById("search_input")
 const countButton = document.getElementById("count_button")
 const countResults = document.getElementById("count_results")
 const totalVolume = document.getElementById("total_volume")
+const cupsList = document.getElementById("cups_list")
+
+const createCupButton = document.getElementById("create_cup_window_button")
+const createCupWindow = document.getElementById("create_cup_window")
+const createCupWindowClose = document.getElementById("create_cup_window_close")
+const createCupFormButton = document.getElementById("create_cup-form-button")
+const createCupWindowForm = document.getElementById("create_cup_window_form")
+
+
+const editCupWindow = document.getElementById("edit_cup_window")
+const editCupWindowClose = document.getElementById("edit_cup_window_close")
+const editCupFormButton = document.getElementById("edit_cup-form-button")
+const editCupWindowForm = document.getElementById("edit_cup_window_form")
+
 
 let cup1 = {
     id: 1,
@@ -95,5 +109,38 @@ countButton.addEventListener("click", () => {
     totalVolume.innerHTML = volumeOfAll
 })
 
+createCupButton.addEventListener("click", (event) => {
+    event.preventDefault
+        openModalWindow(createCupWindow)
+})
+
+createCupWindowClose.addEventListener("click", (event) => {
+    event.preventDefault
+    closeModalWindow(createCupWindow)
+})
+
+createCupFormButton.addEventListener("click", (event) =>{
+    event.preventDefault()
+    if (validateCreate()){
+        closeModalWindow(createCupWindow)
+        createCupWindowForm.reset()
+    }
+})
+
+editCupWindowClose.addEventListener("click", (event) => {
+    event.preventDefault
+    closeModalWindow(editCupWindow)
+})
+
+editCupFormButton.addEventListener("click", (event) =>{
+    event.preventDefault()
+    if (validateEdit()){
+        closeModalWindow(editCupWindow)
+        editCupWindowForm.reset()
+    }
+
+})
+
 renderItemsDOM(cups)
 
+export {cups, cupsList}
