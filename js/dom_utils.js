@@ -1,7 +1,7 @@
-import {cups, cupsList} from "./index.js"
+import {cups, cupsList, editNameInput, editVolumeInput, editMaterialInput, editColorSelect } from "./index.js"
 const editCupWindow = document.getElementById("edit_cup_window")
-
-
+const deleteCupWindow = document.getElementById("delete_cup_window")
+let curentCupId = 0
 
 const cardTemplate = ({ id, cupName, volume, material, color, image }) => `
 <div id="cup_${id}" class="card">
@@ -29,6 +29,7 @@ const renderItemsDOM = (array) => {
         addItemToPage(item)
     }
     renderEditButtons()
+    renderDeleteButtons()
 }
 
 const calculateTotal = (cups) => {
@@ -52,9 +53,50 @@ const renderEditButtons = () =>{
         let editButton = document.getElementById(`edit_button_cup_${cup.id}`)
         editButton.addEventListener("click", () => {
             openModalWindow(editCupWindow)
+            curentCupId = cup.id
+            editNameInput.value = cup.cupName
+            editVolumeInput.value  = cup.volume
+            editMaterialInput.value = cup.material
+            editColorSelect.value = cup.color
     })
-}
+}}
+
+const renderDeleteButtons = () =>{
+    for(let cup of cups){
+        let deleteButton = document.getElementById(`delete_button_cup_${cup.id}`)
+        deleteButton.addEventListener("click", () => {
+            openModalWindow(deleteCupWindow)
+            curentCupId = cup.id
+    })
+}}
+
+export const getInputValues = (cupName, volume, material, color) => {
+    var cardImage = ""
+    switch (color.value) {
+        case "RED":
+            cardImage = "red_clay_cup.jpg"
+            break
+        case "BLUE":
+            cardImage = "blue_plastic_cup.jpg"
+            break
+        case "WHITE":
+            cardImage = "white_clay_cup.jpg"
+            break
+        case "SILVER":
+            cardImage = "silver_metal_cup.jpg"
+            break
+        case "TRANSPARENT":
+            cardImage = "transparent_glass_cup.jpg"
+            break
+    }
+    return {
+        cupName: cupName.value,
+        volume: parseInt(volume.value),
+        material: material.value,
+        color: color.value,
+        image: cardImage,
+    }
 }
 
 
-export { renderItemsDOM, addItemToPage, calculateTotal, openModalWindow, closeModalWindow}
+export { renderItemsDOM, addItemToPage, calculateTotal, openModalWindow, closeModalWindow, curentCupId}

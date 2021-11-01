@@ -75,11 +75,11 @@
                         
                         <label for="color">Cup color:</label>
                         <select name="color" id="create-color-select">
-                            <option value="red">🔴 Red</option>
-                            <option value="blue">🔵 Blue</option>
-                            <option value="white">⚪ White</option>
-                            <option value="silver">🔘 Silver</option>
-                            <option value="transparent">⬜️ Transparent</option>
+                            <option value="RED">🔴 Red</option>
+                            <option value="BLUE">🔵 Blue</option>
+                            <option value="WHITE">⚪ White</option>
+                            <option value="SILVER">🔘 Silver</option>
+                            <option value="TRANSPARENT">⬜️ Transparent</option>
                         </select>
 
                         <button class="modal_window-form-button" id="create_cup-form-button">
@@ -110,11 +110,11 @@
                         
                         <label for="color">Cup color:</label>
                         <select name="color" id="edit-color-select">
-                            <option value="red">🔴 Red</option>
-                            <option value="blue">🔵 Blue</option>
-                            <option value="white">⚪ White</option>
-                            <option value="silver">🔘 Silver</option>
-                            <option value="transparent">⬜️ Transparent</option>
+                            <option value="RED">🔴 Red</option>
+                            <option value="BLUE">🔵 Blue</option>
+                            <option value="WHITE">⚪ White</option>
+                            <option value="SILVER">🔘 Silver</option>
+                            <option value="TRANSPARENT">⬜️ Transparent</option>
                         </select>
                         <button class="modal_window-form-button" id="edit_cup-form-button">
                             Edit
@@ -124,6 +124,24 @@
             </div>
         </div>
     </section>
+
+    <section>
+        <div class="modal_window" id="delete_cup_window">
+            <div class="modal_window__content">
+                <div class="modal_window__header">
+                    <h2 class="agree_to_delete_title">Do you want to delete?</h3>
+                    <span class="modal_window-close-button" id="delete_cup_window_close">X</span>
+                </div>
+                <div class="modal_window__body">
+                    <div class="delete_adjustment">
+                    <button class="agree_to_delete_button" id="agree_to_delete_button" >Yes</button>
+                    <button class="disagree_to_delete_button" id="disagree_to_delete_button" >No</button>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <script type="module" src="js/index.js"></script>
     <script src="js/sortCheckbox.js"></script>
 </body>

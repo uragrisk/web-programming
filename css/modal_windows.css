@@ -101,3 +101,40 @@
     background-color: rgb(66, 164, 244);
     color: white;
 }
+
+.agree_to_delete_button{
+    background-color: white;
+    border-radius: 6px;
+    border: solid;
+    width: 200px;
+    height: 70px;
+    border-color: rgb(68, 146, 85);
+    font-size: 40px;
+    font-weight: 700;
+    color: rgb(68, 146, 85);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.agree_to_delete_button:hover{
+    background-color: rgb(68, 146, 85);
+    color: white;
+}
+
+.disagree_to_delete_button{
+    margin-left: 15px;
+    background-color: white;
+    border-radius: 6px;
+    border: solid;
+    width: 200px;
+    height: 70px;
+    border-color: red;
+    font-size: 40px;
+    font-weight: 700;
+    color: red;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.disagree_to_delete_button:hover{
+    background-color: red;
+    color: white;
+}
