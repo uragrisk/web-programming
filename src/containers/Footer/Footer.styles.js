@@ -29,6 +29,6 @@ export const SocialIcons = styled.div`
 
 export const IconBase = styled(Icon)`
     font-size: 24px;
-    color: ${({color}) => color};
+    color: ${({ color }) => color};
     margin-right: 15px;
 `;

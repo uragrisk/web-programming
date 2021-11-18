@@ -10,15 +10,13 @@ export const StyledHeader = styled.div`
         display: flex;
         
     }
+    align-items: center;
 `;
 
 export const NavLogo = styled.div`
     font-weight: bold;
     font-size: 25px;
     align-items: center;
-    text-align: center;
-    margin-top: auto;
-    margin-bottom: auto;
 `;
 
 
@@ -33,13 +31,19 @@ export const Nav = styled.ul`
 `;
 
 export const NavItem = styled.li`
-    margin-right: 30px;
+    padding: 0 1rem;
     font-size: 18px;
+    a{
+        color: black;
+        padding: 5px 15px;
+        border-radius: 20px;
+    }
 `;
 
 export const HeadetButtons = styled.div`
     display: flex;
     align-items: center;
+    display: none;
 `;
 
 export const SignInButton = styled.button`
@@ -70,10 +74,10 @@ export const SignUpButton = styled.button`
     }
 `;
 
+
 export const IconsWrapper = styled.div`
     display: flex;
     > span {
         margin: 0 12px;
     }
 `
-
