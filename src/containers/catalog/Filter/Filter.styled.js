@@ -18,11 +18,3 @@ export const SelectStyle = {
     marginRight: "25px", 
     fontSize: '20px'
 }
-
-export const CatalogTitle = styled.h1 `
-    text-align: center;
-    font-size: 60px;
-    font-weight: 700;
-
-`;
-

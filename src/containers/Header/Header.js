@@ -7,6 +7,7 @@ import HeaderButtons from "../../components/Menu/HeaderButtons/HeaderButtons";
 import HeaderSearch from "../../components/Menu/HeaderSearch/HeaderSearch";
 import { BrowserRouter as Router, Routes, Route, Link, useMatch, useResolvedPath } from "react-router-dom";
 import Catalog from "../catalog/Catalog";
+import ItemPage from "../ItemPage/ItemPage";
 
 
 function CustomLink({ label, to}) {
@@ -48,6 +49,8 @@ const Header = () => (
       <Route path="/catalog" element={<Catalog />}>
       </Route>
       <Route path="/cart" element={<h1>Hello it is cart</h1>}>
+      </Route>
+      <Route path="/cups/:id" element={<ItemPage />}>
       </Route>
     </Routes>
   </Router>

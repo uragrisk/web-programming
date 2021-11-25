@@ -2,12 +2,13 @@ import React from "react";
 import { Card, Button, Typography } from "antd";
 import { Footer, CardStyle } from "./CardItem.styled";
 import 'antd/dist/antd.css'
+import { Link } from "react-router-dom";
 
 
 const { Title } = Typography;
 const { Meta } = Card;
 
-const CardItem = ({ cupName, volume, material, color, image, price }) => (
+const CardItem = ({ cupName, volume, material, color, image, price, id }) => (
   <Card
     hoverable
     style={CardStyle}
@@ -19,7 +20,9 @@ const CardItem = ({ cupName, volume, material, color, image, price }) => (
       <b> Color: </b>  {color}</>} />
     <Footer>
       <Title level={3}>{price}$</Title>
+      <Link to={"/cups/"+ id}>
       <Button size={"large"}>Show More</Button>
+      </Link>
     </Footer>
   </Card>
 );
