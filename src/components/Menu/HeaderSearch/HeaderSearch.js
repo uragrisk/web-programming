@@ -4,11 +4,12 @@ import {
     SearchOutlined,
 } from '@ant-design/icons';
 import GlobalContext from '../../../contexts/GlobalState'
-import { cups} from '../../../contexts/GlobalState';
+
 import { useContext} from 'react';
 
 const HeaderSearch = () => {
     let { setDataRender } = useContext(GlobalContext);
+    const { cups } = useContext(GlobalContext);
 
 
 
@@ -19,6 +20,7 @@ const HeaderSearch = () => {
             (Object.keys(cup).slice(1, 4).some(key =>
                 cup[key].toLowerCase().includes(value.toLowerCase())))))
     }
+    
 
     return (<Input
         prefix={<SearchOutlined style={{ marginRight: 10 }} />}

@@ -1,50 +1,55 @@
 import React from "react";
-import { Select} from 'antd';
+import { Select } from 'antd';
 import { FilterOption, FilterArea, SelectStyle } from "./Filter.styled";
 import GlobalContext from '../../../contexts/GlobalState'
 import { useContext } from 'react';
-import { cups } from "../../../contexts/GlobalState";
+
 
 const { Option } = Select;
 
 
 export const Filter = () => {
-    let { setDataRender } = useContext(GlobalContext);
-    let sortedData = Array.from(cups);
+    let { setFilters } = useContext(GlobalContext);
+    let filterBy, sortOrder;
 
     const filter_by_price = (value) => {
+        filterBy = "price"
         if (value === "Asc") {
-            sortedData.sort((cup1, cup2) => cup1.price - cup2.price);
+            sortOrder = "asc"
         } else {
-            sortedData.sort((cup1, cup2) => cup2.price - cup1.price);
+            sortOrder = "desc"
         }
-        setDataRender(sortedData);
+        setFilters({
+            filterBy: filterBy,
+            sortOrder: sortOrder
+        });
     }
 
     const filter_by_name = (value) => {
+        filterBy = "name"
         if (value === "Asc") {
-            sortedData.sort((cup1, cup2) => {
-                if (cup1.cupName < cup2.cupName) return -1
-                return cup1.cupName > cup2.cupName ? 1 : 0
-            })
+            sortOrder = "asc"
         }
         else {
-            sortedData.sort((cup1, cup2) => {
-                if (cup1.cupName > cup2.cupName) return -1
-                return cup1.cupName < cup2.cupName ? 1 : 0
-            })
+            sortOrder = "desc"
         }
-        setDataRender(sortedData);
+        setFilters({
+            filterBy: filterBy,
+            sortOrder: sortOrder
+        });
     }
 
     const filter_by_volume = (value) => {
+        filterBy = "volume"
         if (value === "Asc") {
-            sortedData.sort((cup1, cup2) => cup1.volume - cup2.volume);
-            console.log(sortedData)
+            sortOrder = "asc"
         } else {
-            sortedData.sort((cup1, cup2) => cup2.volume - cup1.volume);
+            sortOrder = "desc"
         }
-        setDataRender(sortedData);
+        setFilters({
+            filterBy: filterBy,
+            sortOrder: sortOrder
+        });
     }
 
 
@@ -74,3 +79,38 @@ export const Filter = () => {
         </FilterArea>
     )
 }
+
+// const filter_by_price = (value) => {
+    // if (value === "Asc") {
+    //     sortedData.sort((cup1, cup2) => cup1.price - cup2.price);
+    // } else {
+    //     sortedData.sort((cup1, cup2) => cup2.price - cup1.price);
+    // }
+    // setDataRender(sortedData);
+// }
+
+// const filter_by_name = (value) => {
+    // if (value === "Asc") {
+    //     sortedData.sort((cup1, cup2) => {
+    //         if (cup1.cupName < cup2.cupName) return -1
+    //         return cup1.cupName > cup2.cupName ? 1 : 0
+    //     })
+    // }
+    // else {
+    //     sortedData.sort((cup1, cup2) => {
+    //         if (cup1.cupName > cup2.cupName) return -1
+    //         return cup1.cupName < cup2.cupName ? 1 : 0
+    //     })
+    // }
+//     setDataRender(sortedData);
+// }
+
+// const filter_by_volume = (value) => {
+    // if (value === "Asc") {
+    //     sortedData.sort((cup1, cup2) => cup1.volume - cup2.volume);
+    //     console.log(sortedData)
+    // } else {
+    //     sortedData.sort((cup1, cup2) => cup2.volume - cup1.volume);
+    // }
+//     setDataRender(sortedData);
+// }
