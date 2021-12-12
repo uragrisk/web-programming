@@ -5,8 +5,12 @@ import { Button, Typography, Input, Select } from "antd";
 import { ItemSection, ItemContainer, ItemFields, ItemSelectStyle, ItemIlustration, ItemButtons, ItemFooter, ItemDesc, ItemHero, ButtonStyle } from "./ItemPage.styles";
 import { Link } from "react-router-dom";
 import { getCup } from "../../API/API";
-
+import { useDispatch, useSelector } from 'react-redux';
 import { Loading } from "../../components/Loading/Loading";
+import { increaseAmount, addToCart } from "../../redux/actions";
+
+
+
 const { Option } = Select;
 
 const { Title } = Typography;
@@ -24,6 +28,24 @@ const ItemPage = () => {
         });
     }, [id]);
 
+    const cartItems = useSelector((state) => state.cartItems.cartItems);
+    let dispatch = useDispatch();
+
+    const handleAddToCart = () => {
+        let cupsNumber;
+        if (document.getElementById("amount").value != ""){
+            cupsNumber = parseInt(document.getElementById("amount").value);
+        } else {
+            cupsNumber = 1;
+        }
+        if (cartItems.some(item => item.id == id)) {
+            dispatch(increaseAmount(id, cupsNumber));
+        } else {
+            let item = cup;
+            item.amount = cupsNumber;
+            dispatch(addToCart(item));
+        }
+    }
 
     return (
         <ItemSection>
@@ -39,6 +61,7 @@ const ItemPage = () => {
                         <b> Color: </b> {cup.color}
                         <ItemFields>
                             <Input
+                                id="amount"
                                 placeholder="Enter amount of cups:"
                                 allowClear
                                 size="large"
@@ -59,7 +82,7 @@ const ItemPage = () => {
                     <Title level={2}><b>Price: </b>{cup.price}$</Title>
                     <ItemButtons>
                         <Link to="/catalog" ><Button size={"large"} style={ButtonStyle}>Go back</Button></Link>
-                        <Link to="/cart"><Button size={"large"} style={ButtonStyle}>Add to cart</Button></Link>
+                        <Link to="/cart"><Button size={"large"} onClick={handleAddToCart} style={ButtonStyle}>Add to cart</Button></Link>
                     </ItemButtons>
                 </ItemFooter>
             </ItemContainer>
